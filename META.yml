@@ -1,6 +1,6 @@
 ---
 name: WWW-ColiPoste
-version: 0.01
+version: 0.02
 author:
   - 'Sebastien Aperghis-Tramoni <sebastien@aperghis.net>'
 abstract: Fetch shipping status from ColiPoste
@@ -13,13 +13,14 @@ requires:
   HTML::Entities: 0
   HTML::TreeBuilder: 0
   LWP::UserAgent: 0
+  URI: 0
   perl: 5
 build_requires:
   Test::More: 0
 provides:
   WWW::ColiPoste:
     file: lib/WWW/ColiPoste.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

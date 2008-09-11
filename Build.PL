@@ -14,12 +14,12 @@ my $builder = Module::Build->new(
         'LWP::UserAgent'    => 0,
         'HTML::Entities'    => 0,
         'HTML::TreeBuilder' => 0,
+        'URI'               => 0,
     },
     build_requires => {
         'Test::More'        => 0,
     },
     add_to_cleanup      => [ 'WWW-ColiPoste-*' ],
-    create_makefile_pl => 'traditional',
 );
 
 $builder->create_build_script();

@@ -10,7 +10,7 @@ use LWP::UserAgent;
 
 {
     no strict "vars";
-    $VERSION = '0.01';
+    $VERSION = '0.02';
 }
 
 
@@ -20,7 +20,7 @@ WWW::ColiPoste - Fetch shipping status from ColiPoste
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =head1 SYNOPSIS
 
