@@ -10,7 +10,7 @@ use LWP::UserAgent;
 
 {
     no strict "vars";
-    $VERSION = '0.02';
+    $VERSION = '0.03';
 }
 
 
@@ -20,7 +20,7 @@ WWW::ColiPoste - Fetch shipping status from ColiPoste
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =head1 SYNOPSIS
 
@@ -39,6 +39,10 @@ Please note that this module works by web-scrapping, and doesn't
 do any transformation or parsing on the data apart from basic cleanup.
 Especially, the dates and messages are as given by the web site, 
 in French.
+
+B<IMPORTANT:> Thanks to La Poste corporate thinking, this module is
+no longer useful (since 2009), because they replaced the texts in the
+result page with images (just in case their service was still usable).
 
 
 =head1 METHODS
@@ -117,7 +121,7 @@ sub get_status {
         # construct the URL
         my $base_uri = $args{from}
             || "http://www.coliposte.net/particulier/suivi_particulier.jsp?colispart=%s";
-        my $url = sprintf $base_uri => $args{tracking_id};
+        (my $url = $base_uri) =~ s/%s/$args{tracking_id}/;
     
         # fetch the content
         if (-f $url) {

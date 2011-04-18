@@ -1,12 +1,21 @@
 ---
-name: WWW-ColiPoste
-version: 0.02
+abstract: 'Fetch shipping status from ColiPoste'
 author:
   - 'Sebastien Aperghis-Tramoni <sebastien@aperghis.net>'
-abstract: Fetch shipping status from ColiPoste
+build_requires:
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
 license: perl
-resources:
-  license: http://dev.perl.org/licenses/
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: WWW-ColiPoste
+provides:
+  WWW::ColiPoste:
+    file: lib/WWW/ColiPoste.pm
+    version: 0.03
 requires:
   Carp: 0
   File::Slurp: 0
@@ -15,13 +24,6 @@ requires:
   LWP::UserAgent: 0
   URI: 0
   perl: 5
-build_requires:
-  Test::More: 0
-provides:
-  WWW::ColiPoste:
-    file: lib/WWW/ColiPoste.pm
-    version: 0.02
-generated_by: Module::Build version 0.2808
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.03
